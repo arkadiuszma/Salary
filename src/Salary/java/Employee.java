@@ -1,2 +1,2 @@
-package PACKAGE_NAME;public class Employee {
+public record Employee(String name, String lastName, int salary) {
 }

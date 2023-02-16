@@ -2,27 +2,29 @@ import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-public class EmployeeInputFromUser{
+public class EmployeeDataFromUser {
 
     protected static String setEmployeeName() {
         System.out.println("Enter employee name: ");
-        return textValidation();
-    }
-    protected static String setEmployeeLastName() {
-        System.out.println("Enter employee last name: ");
-        return textValidation();
-    }
-    protected static int setEmployeeSalary(){
-        System.out.println("Enter employee salary: ");
-        return numberValidation();
+        return nameValidation();
     }
 
-    private static int numberValidation() {
+    protected static String setEmployeeLastName() {
+        System.out.println("Enter employee last name: ");
+        return nameValidation();
+    }
+
+    protected static int setEmployeeSalary() {
+        System.out.println("Enter employee salary: ");
+        return salaryValidation();
+    }
+
+    private static int salaryValidation() {
         while (true) {
             try {
                 Scanner s = new Scanner(System.in);
                 int salary = s.nextInt();
-                if (salary>0) {
+                if (salary > 0) {
                     return salary;
                 } else {
                     System.out.println("Invalid input. Please enter correct number format.");
@@ -33,11 +35,11 @@ public class EmployeeInputFromUser{
         }
     }
 
-    private static String textValidation() {
+    private static String nameValidation() {
         while (true) {
             try {
                 Scanner s = new Scanner(System.in);
-                if (s.hasNext("[A-Za-z]*")) {
+                if (s.hasNext("[A-Za-ząćęłńóśźżĄĘŁŃÓŚŹŻ]*")) {
                     return s.nextLine();
                 } else {
                     System.out.println("Invalid input. Please enter correct text format.");
