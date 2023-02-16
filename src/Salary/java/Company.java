@@ -21,9 +21,7 @@ public class Company {
     }
 
     protected static void getEmployeeInformation(ArrayList<Employee> employees) {
-        for (Employee employee : employees) {
-            System.out.println("Salary for " + employee.name() + " " + employee.lastName() + " equals " + employee.salary());
-        }
+        employees.stream().map(employee -> "Salary for " + employee.name() + " " + employee.lastName() + " equals " + employee.salary()).forEach(System.out::println);
     }
 
     private static Employee addEmployee() {
