@@ -30,9 +30,8 @@ public class Company {
                 EmployeeDataFromUser.setEmployeeSalary());
     }
 
-    protected static ArrayList<Employee> addEmployeeToList(ArrayList<Employee> employees) {
+    protected static void addEmployeeToList(ArrayList<Employee> employees) {
         Employee newEmployee = addEmployee();
         employees.add(newEmployee);
-        return employees;
     }
 }
