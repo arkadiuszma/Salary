@@ -2,24 +2,9 @@ import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-public class EmployeeDataFromUser {
+public class UserDataHandler {
 
-    protected static String setEmployeeName() {
-        System.out.println("Enter employee name: ");
-        return nameValidation();
-    }
-
-    protected static String setEmployeeLastName() {
-        System.out.println("Enter employee last name: ");
-        return nameValidation();
-    }
-
-    protected static int setEmployeeSalary() {
-        System.out.println("Enter employee salary: ");
-        return salaryValidation();
-    }
-
-    private static int salaryValidation() {
+    public static int getIntFromUser() {
         while (true) {
             try {
                 Scanner s = new Scanner(System.in);
@@ -35,7 +20,7 @@ public class EmployeeDataFromUser {
         }
     }
 
-    private static String nameValidation() {
+    public static String getTextFromUser() {
         while (true) {
             try {
                 Scanner s = new Scanner(System.in);

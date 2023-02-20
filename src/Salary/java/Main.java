@@ -1,9 +1,11 @@
-import java.util.ArrayList;
 
 public class Main {
+    private final static int numberOfEmployees = 5;
     public static void main(String[] args) {
-        int numberOfEmployees = 5;
-        ArrayList<Employee> employees = Company.getEmployeeList(numberOfEmployees);
-        Menu.chooseOptionFromMenu(employees);
+        Company company = new Company();
+        for(int i=0; i<numberOfEmployees;i++){
+            company.addEmployee(EmployeeProvider.getEmployeeFromUser());
+        }
+        Menu.chooseOptionFromMenu(company);
     }
 }

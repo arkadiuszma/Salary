@@ -1,33 +1,15 @@
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.Scanner;
 
 public class Menu {
-    private static int getUserNumber() {
-        printInformationForUser();
-        while (true) {
-            try {
-                Scanner s = new Scanner(System.in);
-                int userNumber = s.nextInt();
-                if (userNumber < 1 || userNumber > 4) {
-                    System.out.println("Invalid input. Please enter correct number.");
-                    continue;
-                }
-                return userNumber;
-            } catch (InputMismatchException e) {
-                System.out.println("Number which you entered isn't in correct type. Please try again.");
-            }
-        }
-    }
 
-    protected static void chooseOptionFromMenu(ArrayList<Employee> employees) {
+    protected static void chooseOptionFromMenu(Company company) {
         while (true) {
-            int userNumber = getUserNumber();
-            switch (userNumber) {
-                case 1 -> Company.printSalarySum(employees);
-                case 2 -> Company.getEmployeeInformation(employees);
-                case 3 -> Company.addEmployeeToList(employees);
+            printInformationForUser();
+            switch (UserDataHandler.getIntFromUser()) {
+                case 1 -> company.printSalarySum();
+                case 2 -> company.getEmployeeInformation();
+                case 3 -> company.addEmployee(EmployeeProvider.getEmployeeFromUser());
                 case 4 -> System.exit(0);
+                default -> System.out.println("Invalid input. Please enter correct number.");
             }
         }
     }
