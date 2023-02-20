@@ -2,7 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Company {
-    private final List <Employee> employees;
+    private final List<Employee> employees;
+
     public Company() {
         this.employees = new ArrayList<>();
     }

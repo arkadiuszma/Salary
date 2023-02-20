@@ -1,9 +1,10 @@
 public class EmployeeProvider {
-    public static Employee getEmployeeFromUser(){
+    public static Employee getEmployeeFromUser() {
         return new Employee(getEmployeeName(),
                 getEmployeeLastName(),
                 getEmployeeSalary());
     }
+
     protected static String getEmployeeName() {
         System.out.println("Enter employee name: ");
         return UserDataHandler.getTextFromUser();
